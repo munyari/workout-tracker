@@ -43,7 +43,7 @@ group :test do
   gem 'rspec-rails', '~> 3.5.0.beta3'
   gem 'rspec-core', '~> 3.5.0.beta3'
   gem 'capybara'
-  gem 'factory_girl'
+  gem 'factory_girl_rails', '~> 4.7.0'
 end
 
 group :development do
