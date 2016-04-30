@@ -1,3 +1,13 @@
 <%= link_to "Track your workout", new_workout_path %>
 <h1>Your Workouts</h1>
-<%# want user to see every workout %>
+
+<ul class="workouts">
+  <% @workouts.each do |workout| %>
+    <li>
+      <%= "Exercise: #{workout.exercise}" %>
+      <%= "Sets: #{workout.sets}" %>
+      <%= "Reps: #{workout.reps}" %>
+      <%= "Weight: #{workout.weight}" %>
+    </li>
+  <% end %>
+</ul>

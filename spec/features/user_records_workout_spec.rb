@@ -20,8 +20,15 @@ feature "User records workout spec" do
     fill_in "Sets", with: 5
     fill_in "Reps", with: 5
     fill_in "Weight", with: 315
+
+    click_on "Submit"
+
+    expect(page).to have_content("Your Workouts")
+    expect(page).to have_content("Exercise: squat")
+    expect(page).to have_content("Sets: 5")
+    expect(page).to have_content("Reps: 5")
+    expect(page).to have_content("Weight: 315")
   end
 
-  describe "with empty exercise field"
-
+  scenario "with empty exercise field"
 end
