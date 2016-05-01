@@ -54,3 +54,6 @@ end
 
 
 gem 'clearance'
+
+# use pry as console instead of irb
+gem 'pry-rails'
