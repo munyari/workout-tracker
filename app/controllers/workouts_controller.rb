@@ -10,6 +10,7 @@ class WorkoutsController < ApplicationController
   def create
     # this can be scoped to user
     Workout.create(workout_params)
+    redirect_to workouts_path
   end
 
   private

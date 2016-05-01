@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       only: [:create, :edit, :update]
   end
 
-  resources :workouts, only: [:new, :show, :create]
+  resources :workouts, only: [:new, :show, :create, :index]
 
   get "/sign_in" => "clearance/sessions#new", as: "sign_in"
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"

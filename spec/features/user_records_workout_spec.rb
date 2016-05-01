@@ -24,7 +24,7 @@ feature "User records workout spec" do
     click_on "Submit"
 
     expect(page).to have_content("Your Workouts")
-    expect(page).to have_content("Exercise: squat")
+    expect(page).to have_content("Exercise: Squat")
     expect(page).to have_content("Sets: 5")
     expect(page).to have_content("Reps: 5")
     expect(page).to have_content("Weight: 315")
