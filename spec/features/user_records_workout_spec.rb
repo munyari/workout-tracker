@@ -30,5 +30,14 @@ feature "User records workout spec" do
     expect(page).to have_content("Weight: 315")
   end
 
-  scenario "with empty exercise field"
+  scenario "with empty exercise field" do
+    click_on "Track your workout"
+    fill_in "Sets", with: 5
+    fill_in "Reps", with: 5
+    fill_in "Weight", with: 315
+    
+    click_on "Submit"
+
+    expect(page).to have_content("Error: fields may not be blank")
+  end
 end
