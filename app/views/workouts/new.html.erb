@@ -1,12 +1,16 @@
+<%= error_messages_for(@workout) %>
+
 <%= form_for @workout, url: workouts_path do |form| %>
+
   <%= form.label :exercise %>
   <%= form.text_field :exercise %>
   <%= form.label :sets %>
   <%= form.text_field :sets %>
   <%= form.label :reps %>
   <%= form.text_field :reps %>
-  <%= form.label :weight %>  
+  <%= form.label :weight %>
   <%= form.text_field :weight %>
 
   <%= form.submit "Submit" %>
 <% end %>
+

@@ -9,12 +9,19 @@ class WorkoutsController < ApplicationController
 
   def create
     # this can be scoped to user
-    Workout.create(workout_params)
-    redirect_to workouts_path
+    @workout = Workout.new(workout_params)
+    respond_to do |format|
+      if @workout.save
+        format.html { redirect_to workouts_path }
+      else
+        format.html { render :new }
+        format.json { render json: @workout.errors, status: :unprocessable_entity }
+      end
+    end
   end
+end
 
-  private
-  def workout_params
-    params.require(:workout).permit(:exercise, :sets, :reps, :weight)
-  end
+private
+def workout_params
+  params.require(:workout).permit(:exercise, :sets, :reps, :weight)
 end

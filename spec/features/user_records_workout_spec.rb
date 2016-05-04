@@ -31,6 +31,8 @@ feature "User records workout spec" do
   end
 
   scenario "with empty exercise field" do
+    visit root_path
+
     click_on "Track your workout"
     fill_in "Sets", with: 5
     fill_in "Reps", with: 5
@@ -38,6 +40,6 @@ feature "User records workout spec" do
     
     click_on "Submit"
 
-    expect(page).to have_content("Error: fields may not be blank")
+    expect(page).to have_content("Exercise can't be blank")
   end
 end
